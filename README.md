@@ -1,5 +1,7 @@
 # controlador_de_financas
 
+## Os códigos principais estão na pasta lib.
+
 A new Flutter project.
 
 ## Getting Started
