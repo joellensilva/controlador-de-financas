@@ -23,24 +23,91 @@ class _TerceiraPageState extends State<TerceiraPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Usuário:',
+          
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: Text(
+              "Control\$ com você!", 
+              textAlign: TextAlign.left, 
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Renda Mensal:',
+
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Usuário:',
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),  
+          ),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Renda Mensal:',
+                filled: true,
+                fillColor: Colors.white,
+              ),
             ),
           ),
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Meta de Reserva:',
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Meta de Reserva:',
+                filled: true,
+                fillColor: Colors.white,
+              ),
             ),
           ),
+
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: Text(
+              "Dívidas", 
+              textAlign: TextAlign.left, 
+              style: TextStyle(
+                fontSize: 25,
+                color: Colors.white
+              ),
+            ),
+          ),
+
+          /*
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextButton(
+              child: Text('Minhas Dívidas'),
+            ),
+          ),
+          
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextButton(
+              child: Text('Novas Dívidas'),
+            ),
+          ),
+          
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextButton(
+              child: Text('Estatísticas'),
+            ),
+          ),
+          */
+        
         ]
       ),
     );

@@ -20,14 +20,94 @@ class _QuartaPageState extends State<QuartaPage> {
         ),
       ),
       backgroundColor: Color(0xFF1E5234),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-             //const Text(),
-          ],
-        ), 
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: Text(
+              "Qual é a sua dívida?", 
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: '',
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),  
+          ),
+
+          const SizedBox(height: 16),
+
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: Text(
+              "Qual é o valor?", 
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: '',
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),  
+          ),
+
+          const SizedBox(height: 16),
+
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: Text(
+              "Qual é a data?", 
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Padding(
+            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: '',
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),  
+          ),
+
+          const SizedBox(height: 24),
+
+          /*const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            child: TextButton(
+              child: Text('Salvar'),
+            ),
+          ),*/
+        
+        ]
+      ),
     );
   }
 
