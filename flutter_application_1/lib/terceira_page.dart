@@ -20,14 +20,36 @@ class _TerceiraPageState extends State<TerceiraPage> {
         ),
       ),
       backgroundColor: Color(0xFF1E5234),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView(
+      body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        child: Column(
           children: [
-             const Text(),
-          ],
+           TextField(
+              decoration: InputDecoration(
+              border: OutlineInputBorder(),
+                hintText: 'Usuário:',
+              ),
         ), 
-        ),
+          TextField(
+            decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Renda Mensal:',
+            ),
+        ), 
+          TextField(
+            decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: 'Meta de reserva:',
+            ),
+        ), 
+        ],
+        ), 
+    ),
+      ],
+    ),
     );
   }
 
