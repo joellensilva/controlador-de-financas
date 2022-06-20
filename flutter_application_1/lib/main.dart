@@ -5,7 +5,7 @@ import 'package:flutter_application_1/quinta_page.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: QuartaPage(),
+    home: TerceiraPage(),
   ),
   );
 }
