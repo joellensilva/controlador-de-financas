@@ -7,9 +7,9 @@ import 'package:flutter_application_1/quinta_page.dart';
 import 'package:flutter_application_1/sexta_page.dart';
 
 void main() {
-  runApp(const MaterialApp(
-
-    home: SegundaPage(),
-  ),
+  runApp(
+    const MaterialApp(
+      home: PrimeiraPage(),
+    ),
   );
-} 
+}
