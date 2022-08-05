@@ -23,7 +23,9 @@ class _TerceiraPageState extends State<TerceiraPage> {
         ),
       ),
       backgroundColor: Color(0xFF1E5234),
-      body: Column(
+      body: ListView(
+        children: 
+        [Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             const Padding(
@@ -147,7 +149,7 @@ class _TerceiraPageState extends State<TerceiraPage> {
                 primary: Colors.white,
               ),
             )
-          ]),
+          ]),])
     );
   }
 }

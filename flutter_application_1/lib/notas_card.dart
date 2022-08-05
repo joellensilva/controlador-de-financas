@@ -30,7 +30,7 @@ class _NotasCardState extends State<NotasCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(
+                 Text(
                   notas.localDivida,
                   style: TextStyle(
                     fontSize: 16,
@@ -52,7 +52,7 @@ class _NotasCardState extends State<NotasCard> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const Text(
+               Text(
                 'R\$ ${notas.valor}',
                 style: TextStyle(
                   fontSize: 16,
@@ -60,7 +60,7 @@ class _NotasCardState extends State<NotasCard> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text(
+               Text(
                 notas.data,
                 style: TextStyle(
                   fontSize: 16,
