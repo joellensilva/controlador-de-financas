@@ -26,36 +26,37 @@ class _SegundaPageState extends State<SegundaPage> {
       ),
       backgroundColor: Color(0xFF1E5234),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          //crossAxisAlignment: CrossAxisAlignment.spaceEvenly,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 80),
-              Icon(
-                Icons.attach_money,
-                size: 100,
-                color: Colors.white,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Usuário:',
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-              ),
-              const SizedBox(height: 24),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Senha:',
-                  filled: true,
-                  fillColor: Colors.white,
-                ),
-              ),
-              /* Icon(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(children: [
+            Center(
+              //crossAxisAlignment: CrossAxisAlignment.spaceEvenly,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 80),
+                  Icon(
+                    Icons.attach_money,
+                    size: 100,
+                    color: Colors.white,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Usuário:',
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Senha:',
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                  ),
+                  /* Icon(
           Icons.alternate_email,
           size: 50,
           color: Color(0xFF1A422B),
@@ -65,7 +66,6 @@ class _SegundaPageState extends State<SegundaPage> {
           size: 50,
           color: Color(0xFF1A422B),
         ),*/
-
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () {

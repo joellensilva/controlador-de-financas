@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/notas.dart';
+import 'package:flutter_application_1/notas_card.dart';
+import 'BD.dart';
 
 class QuintaPage extends StatefulWidget {
   const QuintaPage({Key? key}) : super(key: key);
@@ -8,304 +11,31 @@ class QuintaPage extends StatefulWidget {
 }
 
 class _QuintaPageState extends State<QuintaPage> {
+  List<Notas> lista = BD.notas;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Color(0xFF1A422B),
-        title: Text(
-          'Control\$',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
       backgroundColor: Color(0xFF1E5234),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Text(
-                          'Nota',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          'Data de vencimento:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'R\$****',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        '00/00/0000',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Text(
-                          'Nota',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          'Data de vencimento:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'R\$****',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        '00/00/0000',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Text(
-                          'Nota',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          'Data de vencimento:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'R\$****',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        '00/00/0000',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Text(
-                          'Nota',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          'Data de vencimento:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'R\$****',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        '00/00/0000',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        const Text(
-                          'Nota',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          'Data de vencimento:',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0xFF1E5234),
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      const Text(
-                        'R\$****',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text(
-                        '00/00/0000',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Color(0xFF1E5234),
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
+        child: buildListView(context),
         ),
-      ),
-    );
+      );
   }
+  buildListView(BuildContext context){
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 1,
+        childAspectRatio: 6.5,
+        mainAxisSpacing: 5
+      ),
+      itemCount: lista.length,
+      itemBuilder: (context, index) {
+        return NotasCard(
+          notas: lista[index],
+        );
+      },
+    );
 }
+}
+        
