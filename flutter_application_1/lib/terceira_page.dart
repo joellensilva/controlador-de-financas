@@ -4,7 +4,7 @@ import 'package:flutter_application_1/quinta_page.dart';
 import 'package:flutter_application_1/sexta_page.dart';
 
 class TerceiraPage extends StatefulWidget {
-  const TerceiraPage({ Key? key }) : super(key: key);
+  const TerceiraPage({Key? key}) : super(key: key);
 
   @override
   State<TerceiraPage> createState() => _TerceiraPageState();
@@ -17,7 +17,9 @@ class _TerceiraPageState extends State<TerceiraPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF1E5234),
-      body: Column(
+      body: ListView(
+        children: 
+        [ Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const <Widget>[
           
@@ -124,8 +126,7 @@ class _TerceiraPageState extends State<TerceiraPage> {
           ),
           */
 
-        ]
-      ),
+        ]),])
     );
   }
 }
