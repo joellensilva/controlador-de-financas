@@ -5,6 +5,8 @@ import 'package:flutter_application_1/terceira_page.dart';
 import 'package:flutter_application_1/quarta_page.dart';
 import 'package:flutter_application_1/quinta_page.dart';
 import 'package:flutter_application_1/sexta_page.dart';
+import 'package:flutter_application_1/setima_page.dart';
+import 'package:flutter_application_1/oitava_page.dart';
 
 void main() {
   runApp(
