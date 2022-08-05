@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SextaPage extends StatefulWidget {
-  const SextaPage({ Key? key }) : super(key: key);
+  const SextaPage({Key? key}) : super(key: key);
 
   @override
   State<SextaPage> createState() => _SextaPageState();
@@ -109,6 +109,7 @@ class _SextaPageState extends State<SextaPage> {
         ),
         ),])
     ),
+
     );
   }
 }
