@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/terceira_page.dart';
 
+import 'home_page.dart';
+
 class QuartaPage extends StatefulWidget {
   const QuartaPage({Key? key}) : super(key: key);
 
@@ -9,6 +11,7 @@ class QuartaPage extends StatefulWidget {
 }
 
 class _QuartaPageState extends State<QuartaPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
