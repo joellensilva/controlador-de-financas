@@ -97,7 +97,7 @@ class _QuartaPageState extends State<QuartaPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const TerceiraPage();
+                          return const HomePage();
                         },
                       ),
                     );

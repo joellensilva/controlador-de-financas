@@ -143,7 +143,8 @@ class _SegundaPageState extends State<SegundaPage> {
              ],
           ),
         ),
-      ),
+      ]),
+    )
     );
   }
 }

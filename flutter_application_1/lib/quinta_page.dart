@@ -26,7 +26,7 @@ class _QuintaPageState extends State<QuintaPage> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,
-        childAspectRatio: 6.5,
+        childAspectRatio: 8.5,
         mainAxisSpacing: 5
       ),
       itemCount: lista.length,

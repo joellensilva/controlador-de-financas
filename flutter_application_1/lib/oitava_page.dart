@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home_page.dart';
 import 'package:flutter_application_1/terceira_page.dart';
 
 class OitavaPage extends StatefulWidget {
@@ -112,7 +113,7 @@ class _OitavaPageState extends State<OitavaPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const TerceiraPage();
+                        return const HomePage();
                       },
                     ),
                   );
