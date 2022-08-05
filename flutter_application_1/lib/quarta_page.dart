@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/terceira_page.dart';
 
+import 'home_page.dart';
+
 class QuartaPage extends StatefulWidget {
   const QuartaPage({ Key? key }) : super(key: key);
 
@@ -9,19 +11,11 @@ class QuartaPage extends StatefulWidget {
 }
 
 class _QuartaPageState extends State<QuartaPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Color(0xFF1A422B),
-        title: Text(
-          'Control\$',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
       backgroundColor: Color(0xFF1E5234),
-      
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -109,7 +103,7 @@ class _QuartaPageState extends State<QuartaPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const TerceiraPage();
+                                  return const HomePage();
                                 },
                               ),);
                           },

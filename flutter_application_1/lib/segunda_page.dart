@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/terceira_page.dart';
 
+import 'home_page.dart';
+
 class SegundaPage extends StatefulWidget {
   const SegundaPage({ Key? key }) : super(key: key);
 
@@ -20,6 +22,7 @@ class _SegundaPageState extends State<SegundaPage> {
           'Control\$',
           style: TextStyle(fontSize: 24),
         ),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: Color(0xFF1E5234),
       body: Padding (
@@ -73,7 +76,7 @@ class _SegundaPageState extends State<SegundaPage> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const TerceiraPage();
+                                  return const HomePage();
                                 },
                               ),);
                           },
