@@ -19,23 +19,27 @@ class _QuintaPageState extends State<QuintaPage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: buildListView(context),
-        ),
-      );
+      ),
+    );
   }
-  buildListView(BuildContext context){
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+
+  buildListView(BuildContext context) {
+    return ListView.builder(
+      /*gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 1,
         childAspectRatio: 8.5,
         mainAxisSpacing: 5
-      ),
+      ),*/
       itemCount: lista.length,
       itemBuilder: (context, index) {
-        return NotasCard(
-          notas: lista[index],
-        );
+        return Column(children: [
+          NotasCard(
+            notas: lista[index],
+          ),
+          const SizedBox(height: 5)
+        ]);
       },
     );
+  }
 }
-}
-        
+
