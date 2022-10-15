@@ -42,4 +42,3 @@ class _QuintaPageState extends State<QuintaPage> {
     );
   }
 }
-
