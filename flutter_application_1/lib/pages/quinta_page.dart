@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/notas.dart';
-import 'package:flutter_application_1/notas_card.dart';
-import 'BD.dart';
+import 'package:flutter_application_1/domain/notas.dart';
+import 'package:flutter_application_1/widget/notas_card.dart';
+import '../BD.dart';
 
 class QuintaPage extends StatefulWidget {
   const QuintaPage({Key? key}) : super(key: key);
