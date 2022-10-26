@@ -1,22 +1,22 @@
 import 'dart:convert';
 
 import 'package:flutter_application_1/data/db_helper.dart';
-import 'package:flutter_application_1/domain/usuario.dart';
+import 'package:flutter_application_1/domain/renda.dart';
 import 'package:sqflite/sqlite_api.dart';
 
-class UsuarioDao {
+class RendaDao {
 
-  Future<List<Usuario>> listarUsuarios() async {
+  Future<List<Renda>> listarRendas() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    String sql = 'SELECT * FROM USUARIO';
+    String sql = 'SELECT * FROM RENDA';
     var result = await db.rawQuery(sql);
 
-    List<Usuario> lista = <Usuario>[];
+    List<Renda> lista = <Renda>[];
     for (var json in result) {
-      Usuario usuario = Usuario.fromJson(json);
-      lista.add(usurio);
+      Renda renda = Renda.fromJson(json);
+      lista.add(renda);
     }
 
     return lista;
