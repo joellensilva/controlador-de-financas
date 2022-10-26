@@ -16,7 +16,7 @@ class _SextaPageState extends State<SextaPage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.5,
+            height: MediaQuery.of(context).size.height * 0.6,
             width: MediaQuery.of(context).size.width * 0.3,
             child: Center(
               child: Column(
