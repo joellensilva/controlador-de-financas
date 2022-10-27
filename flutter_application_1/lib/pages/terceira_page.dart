@@ -1,7 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/quarta_page.dart';
-import 'package:flutter_application_1/pages/quinta_page.dart';
-import 'package:flutter_application_1/pages/sexta_page.dart';
+import 'package:flutter_application_1/data/usuario_dao.dart';
+import 'package:flutter_application_1/domain/usuario.dart';
 
 class TerceiraPage extends StatefulWidget {
   const TerceiraPage({Key? key}) : super(key: key);
@@ -12,68 +13,55 @@ class TerceiraPage extends StatefulWidget {
 
 class _TerceiraPageState extends State<TerceiraPage> {
   int selectedIndex = 0;
+  Future<List<Usuario>> listUsers = UsuarioDao().listarUsuarios('SELECT nome FROM USUARIO WHERE nome = "Biel"');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF1E5234),
       body: ListView(
-        children: 
-        [ Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const <Widget>[
-          
-          Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: Text(
-              "Control\$ com você!", 
-              textAlign: TextAlign.left, 
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const <Widget>[
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: Text(
+                  "Control\$ com você!",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
-          ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 1),
+                child: Card(
+                  elevation: 0,
+                  color: Colors.white,
+                  child: SizedBox(
+                    width: 1000,
+                    height: 50,
+                    child: Center(child: Text('Nome: ')),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 1),
+                child: Card(
+                  elevation: 0,
+                  color: Colors.white,
+                  child: SizedBox(
+                    width: 1000,
+                    height: 50,
+                    child: Center(child: Text('Renda Mensal:')),
+                  ),
+                ),
+              ),
 
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 1),
-            child: Card(
-              elevation: 0,
-              color: Colors.white,
-              child: SizedBox(
-                width: 1000,
-                height: 50,
-                child: Center(child: Text('Nome:')),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 1),
-            child: Card(
-              elevation: 0,
-              color: Colors.white,
-              child: SizedBox(
-                width: 1000,
-                height: 50,
-                child: Center(child: Text('Renda Mensal:')),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 1),
-            child: Card(
-              elevation: 0,
-              color: Colors.white,
-              child: SizedBox(
-                width: 1000,
-                height: 50,
-                child: Center(child: Text('Renda Mensal:')),
-              ),
-            ),
-          ),
-
-          /*
+              /*
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -125,8 +113,10 @@ class _TerceiraPageState extends State<TerceiraPage> {
             ),
           ),
           */
-
-        ]),])
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

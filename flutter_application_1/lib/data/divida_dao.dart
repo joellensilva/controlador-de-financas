@@ -18,7 +18,6 @@ class DividaDao {
       Divida divida = Divida.fromJson(json);
       lista.add(divida);
     }
-
     return lista;
   }
 }

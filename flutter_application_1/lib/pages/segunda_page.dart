@@ -160,11 +160,12 @@ class _SegundaPageState extends State<SegundaPage> {
     String userDigitado = userController.text;
     String passwordDigitado = passwordController.text;
 
-    String user = 'joao@gmail.com';
+    //String user = 'joao@gmail.com';
+    RegExp user = RegExp(r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)');
     String password = '123456';
 
     if (_formKey.currentState!.validate()) {
-      if (userDigitado == user && passwordDigitado == password) {
+      if (user.hasMatch(userDigitado) == true && passwordDigitado == password) {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
