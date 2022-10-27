@@ -5,7 +5,6 @@ import 'package:flutter_application_1/domain/usuario.dart';
 import 'package:sqflite/sqlite_api.dart';
 
 class UsuarioDao {
-
   Future<List<Usuario>> listarUsuarios() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
@@ -16,7 +15,7 @@ class UsuarioDao {
     List<Usuario> lista = <Usuario>[];
     for (var json in result) {
       Usuario usuario = Usuario.fromJson(json);
-      lista.add(usurio);
+      lista.add(usuario);
     }
 
     return lista;
