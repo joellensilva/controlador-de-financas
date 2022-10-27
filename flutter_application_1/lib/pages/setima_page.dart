@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/segunda_page.dart';
+import 'package:flutter_application_1/pages/segunda_page.dart';
 
 class SetimaPage extends StatefulWidget {
   const SetimaPage({Key? key}) : super(key: key);
