@@ -1,4 +1,4 @@
-import 'package:flutter_application_1/notas.dart';
+import 'package:flutter_application_1/domain/notas.dart';
 
 class BD {
   static List<Notas> notas = [

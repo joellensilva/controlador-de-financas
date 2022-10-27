@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/primeira_page.dart';
-import 'package:flutter_application_1/segunda_page.dart';
-import 'package:flutter_application_1/terceira_page.dart';
-import 'package:flutter_application_1/quarta_page.dart';
-import 'package:flutter_application_1/quinta_page.dart';
-import 'package:flutter_application_1/sexta_page.dart';
-import 'package:flutter_application_1/setima_page.dart';
-import 'package:flutter_application_1/oitava_page.dart';
+import 'package:flutter_application_1/pages/primeira_page.dart';
+import 'package:flutter_application_1/pages/segunda_page.dart';
+import 'package:flutter_application_1/pages/terceira_page.dart';
+import 'package:flutter_application_1/pages/quarta_page.dart';
+import 'package:flutter_application_1/pages/quinta_page.dart';
+import 'package:flutter_application_1/pages/sexta_page.dart';
+import 'package:flutter_application_1/pages/setima_page.dart';
+import 'package:flutter_application_1/pages/oitava_page.dart';
 
 void main() {
   runApp(
