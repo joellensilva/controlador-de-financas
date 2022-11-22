@@ -63,27 +63,27 @@ class DBHelper {
     // DIVIDA
 
     String debt =
-        'create table DIVIDA (id INTEGER PRIMARY KEY, id_user INT FOREIGN KEY USUARIO(id), localDivida varchar (50), data varchar(10), valor float)';
+        'create table DIVIDA (id INTEGER PRIMARY KEY, localDivida varchar (50), data varchar(10), valor float)';
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, id_user, localDivida, data, valor) VALUES (1, 1, 'Mercado São Luís', '30/10/2022', 87.50);";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (1, 'Mercado São Luís', '30/10/2022', 87.50);";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, id_user, localDivida, data, valor) VALUES (2, 1, 'Renner', '27/10/2022', 97.50);";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (2, 'Renner', '27/10/2022', 97.50);";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, id_user, localDivida, data, valor) VALUES (3, 2, 'Riachuelo', '30/10/2022', 87.50);";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (3, 'Riachuelo', '30/10/2022', 87.50);";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, id_user, localDivida, data, valor) VALUES (4, 3, 'Americanas', '27/10/2022', 37.50);";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (4, 'Americanas', '27/10/2022', 37.50);";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, id_user, localDivida, data, valor) VALUES (4, 4, 'Americanas', '27/10/2022', 97.50);";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (5, 'Americanas', '27/10/2022', 97.50);";
     await db.execute(debt);
   }
 }
