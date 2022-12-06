@@ -18,7 +18,7 @@ class _SegundaPageState extends State<SegundaPage> {
   TextEditingController userController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +49,9 @@ class _SegundaPageState extends State<SegundaPage> {
                     color: Colors.white,
                   ),
                   TextFormField(
+                    controller: userController,
                     validator: (value) {
-                      if (value!.isEmpty) {
+                      if (value == null || value.isEmpty) {
                         return "Campo obrigatório";
                       }
 
@@ -66,21 +67,23 @@ class _SegundaPageState extends State<SegundaPage> {
                   ),
                   const SizedBox(height: 24),
                   TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Campo obrigatório";
-                      }
-
-                      return null;
-                    },
-                    obscureText: true,
                     controller: passwordController,
+                    obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Senha:',
                       filled: true,
                       fillColor: Colors.white,
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Campo obrigatório";
+                      } else if(value.length < 6) {
+                        return 'A senha deve conter no mínimo 6 dígitos';
+                      }
+
+                      return null;
+                    },
                   ),
                   /* Icon(
           Icons.alternate_email,
