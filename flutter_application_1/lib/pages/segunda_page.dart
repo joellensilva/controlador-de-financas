@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/data/usuario_dao.dart';
+import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:flutter_application_1/pages/terceira_page.dart';
 import 'package:flutter_application_1/pages/setima_page.dart';
 import 'package:flutter_application_1/pages/oitava_page.dart';
-import 'package:flutter_application_1/pages/terceira_page.dart';
 
 import 'home_page.dart';
 
@@ -159,6 +161,38 @@ class _SegundaPageState extends State<SegundaPage> {
     );
   }
 
+  Future<void> onPressed() async {
+    if (_formKey.currentState!.validate()) {
+      String email = userController.text;
+      String senha = passwordController.text;
+
+      bool resultado = await UsuarioDao().autenticarUsuarios(email: email, senha: senha);
+
+      if (resultado) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const HomePage();
+            },
+          ),
+        );
+      } else {
+        final msg = SnackBar(
+          behavior: SnackBarBehavior.floating,
+          content: Text(
+            ("Usuario/Senha incorretos"),
+          ),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(msg);
+      }
+    } else {
+      print("Formulário invalido");
+    }
+  }
+
+/*
+  antigo botão Entrar
   void onPressed() {
     String userDigitado = userController.text;
     String passwordDigitado = passwordController.text;
