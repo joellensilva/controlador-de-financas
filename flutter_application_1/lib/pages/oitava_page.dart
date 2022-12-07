@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/usuario_dao.dart';
+import 'package:flutter_application_1/data/address_api.dart';
 import 'package:flutter_application_1/domain/usuario.dart';
+import 'package:flutter_application_1/domain/address.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/terceira_page.dart';
 
@@ -14,7 +16,11 @@ class OitavaPage extends StatefulWidget {
 class _OitavaPageState extends State<OitavaPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController userController = TextEditingController();
+  TextEditingController nomeController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController cepController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController bairroController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +63,7 @@ class _OitavaPageState extends State<OitavaPage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: TextFormField(
+                  controller: nomeController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Campo obrigatório";
@@ -75,6 +82,7 @@ class _OitavaPageState extends State<OitavaPage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: TextFormField(
+                  controller: userController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Campo obrigatório";
@@ -82,7 +90,6 @@ class _OitavaPageState extends State<OitavaPage> {
 
                     return null;
                   },
-                  controller: userController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'E-mail:',
@@ -149,6 +156,7 @@ class _OitavaPageState extends State<OitavaPage> {
                   ),
                 ),
               ),
+              /*
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: TextFormField(
@@ -163,6 +171,65 @@ class _OitavaPageState extends State<OitavaPage> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Confirmar senha:',
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
+              ),
+              */
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: TextFormField(
+                  controller: cepController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Campo obrigatório";
+                    }
+
+                    return null;
+                  },
+                  onEditingComplete: onEditingComplete,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'CEP:',
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: TextFormField(
+                  controller: addressController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Campo obrigatório";
+                    }
+
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Endereço:',
+                    filled: true,
+                    fillColor: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                child: TextFormField(
+                  controller: bairroController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Campo obrigatório";
+                    }
+
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Bairro:',
                     filled: true,
                     fillColor: Colors.white,
                   ),
@@ -192,11 +259,13 @@ class _OitavaPageState extends State<OitavaPage> {
   onPressed() async {
     if (_formKey.currentState!.validate()) {
       String emailDigitado = userController.text;
+      String nomeDigitado = nomeController.text;
       String senhaDigitado = passwordController.text;
 
-      Usuario usuario = Usuario(email: emailDigitado, nome: emailDigitado, senha: senhaDigitado);
-      await UsuarioDao().salvarUsuarios(usuario: usuario);
-
+      Usuario usuarioCriado =
+      Usuario(email: emailDigitado, nome: nomeDigitado, senha: senhaDigitado);
+      await UsuarioDao().salvarUsuarios(usuario: usuarioCriado);
+      
       showSnackBar('Usuário foi salvo com sucesso!');
       Navigator.pop(context);
 
@@ -217,25 +286,14 @@ class _OitavaPageState extends State<OitavaPage> {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
-/*
-  void onPressed() {
-    /*String userDigitado = userController.text;
-    String passwordDigitado = passwordController.text;
-    String user = 'joao@gmail.com';
-    String password = '123456';*/
+  Future<void> onEditingComplete() async {
 
-    if (_formKey.currentState!.validate()) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return const HomePage();
-          },
-        ),
-      );
-    }
+    String cep = cepController.text;
+    Address address = await AddressApi().findAddressByCep(cep);
+
+    addressController.text = address.logradouro;
+    bairroController.text = address.bairro;
   }
-*/
 
 /*
   @override
@@ -400,5 +458,26 @@ class _OitavaPageState extends State<OitavaPage> {
       ),
     );
   }
-  */
+*/
+
+/*
+  void onPressed() {
+    /*String userDigitado = userController.text;
+    String passwordDigitado = passwordController.text;
+    String user = 'joao@gmail.com';
+    String password = '123456';*/
+
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return const HomePage();
+          },
+        ),
+      );
+    }
+  }
+*/
+
 }
