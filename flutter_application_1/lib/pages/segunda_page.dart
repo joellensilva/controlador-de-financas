@@ -59,7 +59,6 @@ class _SegundaPageState extends State<SegundaPage> {
 
                       return null;
                     },
-                    controller: userController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Usuário:',
@@ -222,4 +221,5 @@ class _SegundaPageState extends State<SegundaPage> {
       }
     }
   }
+*/
 }
