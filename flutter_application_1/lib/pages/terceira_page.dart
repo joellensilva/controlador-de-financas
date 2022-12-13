@@ -1,8 +1,9 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/usuario_dao.dart';
+import 'package:flutter_application_1/domain/renda.dart';
 import 'package:flutter_application_1/domain/usuario.dart';
+
+import '../data/renda_dao.dart';
 
 class TerceiraPage extends StatefulWidget {
   const TerceiraPage({Key? key}) : super(key: key);
@@ -16,30 +17,46 @@ class _TerceiraPageState extends State<TerceiraPage> {
 
   @override
   Widget build(BuildContext context) {
+    // List<Usuario> lista1 = buildFutureUsuario();
+    // List<Renda> lista2 = buildFutureRenda();
     return Scaffold(
       backgroundColor: Color(0xFF1E5234),
-      body: buildFutureBuilder()
+      body: buildColumn(lista1, lista2, context)
     );
   }
 
-  buildFutureBuilder() {
+  buildFutureUsuario() {
     Future<List<Usuario>> futureLista = UsuarioDao().listarUsuarios();
 
-    return FutureBuilder<List<Usuario>>(
+    FutureBuilder<List<Usuario>>(
       future: futureLista,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List<Usuario> lista = snapshot.data ?? [];
-          return buildColumn(lista, context);
+          return lista;
         }
         return const Center(child: CircularProgressIndicator());
       },
     );
   }
 }
+buildFutureRenda() {
+  Future<List<Renda>> futureLista = RendaDao().listarRendas();
 
-buildColumn(List<Usuario> lista, context) {
+  return FutureBuilder<List<Renda>>(
+    future: futureLista,
+    builder: (context, snapshot) {
+      if (snapshot.hasData) {
+        List<Renda> lista = snapshot.data ?? [];
+        return lista;
+      }
+      return const Center(child: CircularProgressIndicator());
+    },
+  );
+}
+}
 
+buildColumn(List<Usuario> lista1, List<Renda> lista2, context) {
   return ListView(
     children: [
       Column(
