@@ -37,7 +37,7 @@ class _OitavaPageState extends State<OitavaPage> {
         backgroundColor: Color(0xFF1E5234),
         body: buildBody(),
       ),
-    ),
+    );
   }
 
   buildBody(){
@@ -253,7 +253,7 @@ class _OitavaPageState extends State<OitavaPage> {
           ),
         ),
       ],
-    ),
+    );
   }
 
   onPressed() async {
