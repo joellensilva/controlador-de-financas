@@ -24,6 +24,8 @@ class _QuartaPageState extends State<QuartaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFF1E5234),
+        body: buildBody(),
+        /*
         body: ListView(children: [
           Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,6 +152,53 @@ class _QuartaPageState extends State<QuartaPage> {
                 )
               ]),
         ]));
+    */
+  }
+
+  buildBody() {
+    return ListView(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const <Widget>[
+            SizedBox(height: 50),
+            
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Text(
+                "Qual é a sua dívida?",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+            
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: TextFormField(
+                controller: localDividaController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Campo obrigatório";
+                  }
+
+                  return null;
+                },
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: '',
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              ),
+            ),
+            
+          ]
+        ),
+      ],
+    );
   }
 
   onPressed() async {
