@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/terceira_page.dart';
+import 'package:flutter_application_1/data/divida_dao.dart';
+import 'package:flutter_application_1/domain/divida.dart';
+
 
 import 'home_page.dart';
 
@@ -11,7 +14,12 @@ class QuartaPage extends StatefulWidget {
 }
 
 class _QuartaPageState extends State<QuartaPage> {
-  int selectedIndex = 0;
+  final _formKey = GlobalKey<FormState>();
+
+  TextEditingController localDividaController = TextEditingController();
+  TextEditingController valorController = TextEditingController();
+  TextEditingController dataController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +40,17 @@ class _QuartaPageState extends State<QuartaPage> {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: TextField(
+                  child: TextFormField(
+                    controller: localDividaController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Campo obrigatório";
+                      }
+
+                      return null;
+                    },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: '',
@@ -55,9 +71,17 @@ class _QuartaPageState extends State<QuartaPage> {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: TextField(
+                  child: TextFormField(
+                  controller: valorController,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return "Campo obrigatório";
+                    }
+
+                    return null;
+                  },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: '',
@@ -79,9 +103,17 @@ class _QuartaPageState extends State<QuartaPage> {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: TextField(
+                  child: TextFormField(
+                    controller: dataController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Campo obrigatório";
+                      }
+
+                      return null;
+                    },
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: '',
@@ -92,6 +124,8 @@ class _QuartaPageState extends State<QuartaPage> {
                 ),
                 const SizedBox(height: 24),
                 ElevatedButton(
+                  onPressed: onPressed,
+                  /*
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -102,6 +136,7 @@ class _QuartaPageState extends State<QuartaPage> {
                       ),
                     );
                   },
+                  */
                   child: const Text(
                     'Salvar',
                     style: TextStyle(
@@ -115,5 +150,42 @@ class _QuartaPageState extends State<QuartaPage> {
                 )
               ]),
         ]));
+  }
+
+  onPressed() async {
+    if (_formKey.currentState!.validate()) {
+      String localDividaDigitado = localDividaController.text;
+      String dataDigitado = dataController.text;
+      double valorDigitado = double.parse(valorController.text);
+
+      Divida dividaCriado =
+      Divida(localDivida: localDividaDigitado, data: dataDigitado, valor: valorDigitado);
+      await DividaDao().salvarDividas(divida: dividaCriado);
+
+      showSnackBar('Dívida foi salvo com sucesso!');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return const HomePage();
+          },
+        ),
+      );
+
+    } else {
+      showSnackBar("Erro na validação");
+    }
+  }
+
+  showSnackBar(String msg) {
+    final snackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(
+        vertical: 80,
+        horizontal: 32,
+      ),
+      content: Text(msg),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

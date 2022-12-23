@@ -6,6 +6,13 @@ import 'package:sqflite/sqlite_api.dart';
 
 class DividaDao {
 
+  salvarDividas({required Divida divida}) async {
+    DBHelper dbHelper = DBHelper();
+    Database db = await dbHelper.initDB();
+
+    db.insert('divida', divida.toJson());
+  }
+
   Future<List<Divida>> listarDividas() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
@@ -22,21 +29,3 @@ class DividaDao {
   }
 }
 
-/*
-class Notas {
-  Future<List<Notas>> listarDividas() async {
-    DBHelper dbHelper = DBHelper();
-    Database db = await dbHelper.initDB();
-
-    String sql = 'SELECT * FROM USUARIO';
-    var result = await db.rawQuery(sql);
-
-    List<Notas> lista = <Notas>[];
-    for (var json in result) {
-      Notas divida = Notas.fromJson(json);
-      lista.add(divida);
-    }
-
-    return lista;
-  }
-*/
