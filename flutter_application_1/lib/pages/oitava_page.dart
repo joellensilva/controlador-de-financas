@@ -277,7 +277,7 @@ class _OitavaPageState extends State<OitavaPage> {
       await UsuarioDao().salvarUsuarios(usuario: usuarioCriado);
 
       Renda rendaCriado =
-      Renda(salario: salarioDigitado, reserva: reservaDigitado);
+      Renda(salario: salarioDigitado, reserva: reservaDigitado, fk_email: emailDigitado);
       await RendaDao().salvarRendas(renda: rendaCriado);
       
       showSnackBar('Usuário foi salvo com sucesso!');
