@@ -3,8 +3,8 @@ import 'dart:ffi';
 import 'package:flutter_application_1/data/renda_dao.dart';
 
 class Renda {
-  late final Float salario;
-  late final Float reserva;
+  late final double salario;
+  late final double reserva;
 
   Renda({required this.salario, required this.reserva});
 

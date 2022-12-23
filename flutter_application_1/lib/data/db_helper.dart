@@ -41,7 +41,7 @@ class DBHelper {
     // RENDA
 
     String income =
-        'create table RENDA (id INTEGER PRIMARY KEY, salario float, reserva float)';
+        'create table RENDA (id INTEGER PRIMARY KEY, salario double, reserva double)';
     await db.execute(income);
 
     income =

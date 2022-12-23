@@ -1,7 +1,11 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/usuario_dao.dart';
+import 'package:flutter_application_1/data/renda_dao.dart';
 import 'package:flutter_application_1/data/address_api.dart';
 import 'package:flutter_application_1/domain/usuario.dart';
+import 'package:flutter_application_1/domain/renda.dart';
 import 'package:flutter_application_1/domain/address.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/terceira_page.dart';
@@ -18,6 +22,8 @@ class _OitavaPageState extends State<OitavaPage> {
   TextEditingController userController = TextEditingController();
   TextEditingController nomeController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController salarioController = TextEditingController();
+  TextEditingController reservaController = TextEditingController();
   TextEditingController cepController = TextEditingController();
   TextEditingController addressController = TextEditingController();
   TextEditingController bairroController = TextEditingController();
@@ -101,6 +107,7 @@ class _OitavaPageState extends State<OitavaPage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: TextFormField(
+                  controller: salarioController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Campo obrigatório";
@@ -119,6 +126,7 @@ class _OitavaPageState extends State<OitavaPage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: TextFormField(
+                  controller: reservaController,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Campo obrigatório";
@@ -261,10 +269,16 @@ class _OitavaPageState extends State<OitavaPage> {
       String emailDigitado = userController.text;
       String nomeDigitado = nomeController.text;
       String senhaDigitado = passwordController.text;
+      double salarioDigitado = double.parse(salarioController.text);
+      double reservaDigitado = double.parse(reservaController.text);
 
       Usuario usuarioCriado =
       Usuario(email: emailDigitado, nome: nomeDigitado, senha: senhaDigitado);
       await UsuarioDao().salvarUsuarios(usuario: usuarioCriado);
+
+      Renda rendaCriado =
+      Renda(salario: salarioDigitado, reserva: reservaDigitado);
+      await RendaDao().salvarRendas(renda: rendaCriado);
       
       showSnackBar('Usuário foi salvo com sucesso!');
       Navigator.pop(context);

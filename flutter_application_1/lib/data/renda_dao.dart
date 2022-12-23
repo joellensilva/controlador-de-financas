@@ -6,6 +6,13 @@ import 'package:sqflite/sqlite_api.dart';
 
 class RendaDao {
 
+  salvarRendas({required Renda renda}) async {
+    DBHelper dbHelper = DBHelper();
+    Database db = await dbHelper.initDB();
+
+    db.insert('renda', renda.toJson());
+  }
+
   Future<List<Renda>> listarRendas() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
