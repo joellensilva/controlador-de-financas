@@ -45,19 +45,19 @@ class DBHelper {
     await db.execute(income);
 
     income =
-        "INSERT INTO RENDA (id, salario, reserva) VALUES (1, 200, 200, 'joellen@gmail.com');";
+        "INSERT INTO RENDA (id, salario, reserva, fk_email) VALUES (1, 200, 200, 'joellen@gmail.com');";
     await db.execute(income);
 
     income =
-        "INSERT INTO RENDA (id, salario, reserva) VALUES (2, 800, 50, 'gabriel@gmail.com');";
+        "INSERT INTO RENDA (id, salario, reserva, fk_email) VALUES (2, 800, 50, 'gabriel@gmail.com');";
     await db.execute(income);
 
     income =
-        "INSERT INTO RENDA (id, salario, reserva) VALUES (3, 1000, 150, 'iago@gmail.com');";
+        "INSERT INTO RENDA (id, salario, reserva, fk_email) VALUES (3, 1000, 150, 'iago@gmail.com');";
     await db.execute(income);
 
     income =
-        "INSERT INTO RENDA (id, salario, reserva) VALUES (4, 1800, 230, 'jhonathan@gmail.com');";
+        "INSERT INTO RENDA (id, salario, reserva, fk_email) VALUES (4, 1800, 230, 'jhonathan@gmail.com');";
     await db.execute(income);
 
     // DIVIDA
@@ -67,23 +67,23 @@ class DBHelper {
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (1, 'Mercado São Luís', '30/10/2022', 87.50, 'iago@gmail.com');";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor, fk_email) VALUES (1, 'Mercado São Luís', '30/10/2022', 87.50, 'iago@gmail.com');";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (2, 'Renner', '27/10/2022', 97.50, 'iago@gmail.com');";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor, fk_email) VALUES (2, 'Renner', '27/10/2022', 97.50, 'iago@gmail.com');";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (3, 'Riachuelo', '30/10/2022', 87.50, 'jhonathan@gmail.com');";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor, fk_email) VALUES (3, 'Riachuelo', '30/10/2022', 87.50, 'jhonathan@gmail.com');";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (4, 'Americanas', '27/10/2022', 37.50, 'gabriel@gmail.com');";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor, fk_email) VALUES (4, 'Americanas', '27/10/2022', 37.50, 'gabriel@gmail.com');";
     await db.execute(debt);
 
     debt =
-        "INSERT INTO DIVIDA (id, localDivida, data, valor) VALUES (5, 'Americanas', '27/10/2022', 97.50, 'joellen@gmail.com');";
+        "INSERT INTO DIVIDA (id, localDivida, data, valor, fk_email) VALUES (5, 'Americanas', '27/10/2022', 97.50, 'joellen@gmail.com');";
     await db.execute(debt);
   }
 }
