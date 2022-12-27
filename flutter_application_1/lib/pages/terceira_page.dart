@@ -18,7 +18,7 @@ class _TerceiraPageState extends State<TerceiraPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF1E5234),
-      body: buildFutureBuilder()
+      body: buildFutureBuilder(),
     );
   }
 
